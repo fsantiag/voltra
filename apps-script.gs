@@ -1,3 +1,6 @@
+// appsscript.json oauthScopes:
+// ["https://www.googleapis.com/auth/spreadsheets"]
+
 // Voltra — Google Apps Script form handler
 //
 // SETUP:
@@ -30,22 +33,6 @@ function doPost(e) {
     return ContentService
       .createTextOutput(JSON.stringify({ result: 'error', message: sheetErr.message }))
       .setMimeType(ContentService.MimeType.JSON);
-  }
-
-  try {
-    MailApp.sendEmail({
-      to      : Session.getEffectiveUser().getEmail(),
-      subject : 'Novo interesse Voltra — ' + (e.parameter.nome || 'sem nome'),
-      body    : [
-        'Nome:      ' + (e.parameter.nome      || ''),
-        'Email:     ' + (e.parameter.email     || ''),
-        'Telefone:  ' + (e.parameter.telefone  || ''),
-        'Tipo:      ' + (e.parameter.tipo      || ''),
-        'Mensagem:  ' + (e.parameter.mensagem  || ''),
-      ].join('\n'),
-    });
-  } catch (mailErr) {
-    console.error('Email failed: ' + mailErr.message);
   }
 
   return ContentService
