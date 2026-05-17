@@ -4,43 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Voltra | Recarga para Veículos Elétricos no seu Condomínio</title>
-  <meta name="description" content="Voltra instala e opera pontos de recarga para veículos elétricos em condomínios residenciais. Sem obras, sem custo inicial. Solicite uma proposta para seu condomínio." />
-  <meta name="keywords" content="recarga veículo elétrico condomínio, carregamento elétrico condomínio, ponto de recarga EV, síndico, Natal, RN, Brasil" />
+  <title>Voltra | Recarga para Veículos Elétricos em Condomínios</title>
+  <meta name="description" content="Voltra instala e opera totens de recarga para veículos elétricos em condomínios residenciais. Sem obras. Sem custo para o condomínio. Solicite uma proposta." />
+  <meta name="keywords" content="recarga veículo elétrico condomínio, totem recarga EV, síndico, Natal, RN, Brasil" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Voltra" />
   <link rel="canonical" href="https://voltra.info" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://voltra.info" />
-  <meta property="og:title" content="Voltra | Recarga para Veículos Elétricos no seu Condomínio" />
-  <meta property="og:description" content="Voltra instala e opera pontos de recarga para veículos elétricos em condomínios residenciais. Sem obras, sem custo inicial." />
+  <meta property="og:title" content="Voltra | Recarga para Veículos Elétricos em Condomínios" />
+  <meta property="og:description" content="A Voltra instala e opera totens de recarga para veículos elétricos em condomínios residenciais. Sem obras, sem custo para o condomínio." />
   <meta property="og:locale" content="pt_BR" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Voltra | Recarga para Veículos Elétricos no seu Condomínio" />
-  <meta name="twitter:description" content="Instale recarga elétrica no seu condomínio. Sem obras, sem custo inicial para o condomínio." />
+  <meta name="twitter:title" content="Voltra | Recarga para Veículos Elétricos em Condomínios" />
+  <meta name="twitter:description" content="Totens de recarga para condomínios residenciais. Sem obras, sem custo." />
 
-  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Voltra",
-    "description": "Instalação e operação de pontos de recarga para veículos elétricos em condomínios residenciais",
+    "description": "Instalação e operação de totens de recarga para veículos elétricos em condomínios residenciais",
     "url": "https://voltra.info",
-    "areaServed": {
-      "@type": "City",
-      "name": "Natal",
-      "addressRegion": "RN",
-      "addressCountry": "BR"
-    }
+    "areaServed": { "@type": "City", "name": "Natal", "addressRegion": "RN", "addressCountry": "BR" }
   }
   </script>
 
-  <!-- GA4: replace G-XXXXXXXXXX with your Measurement ID from Google Analytics -->
+  <!-- GA4: replace G-XXXXXXXXXX with your Measurement ID -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -49,284 +41,367 @@
     gtag('config', 'G-XXXXXXXXXX');
   </script>
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-</head>
-<body class="bg-zinc-950 text-white font-sans antialiased">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;450;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800/60">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <span class="text-xl font-black tracking-tight">
-        <span class="text-blue-400">V</span>oltra
-      </span>
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* ── Tokens ── */
+    :root {
+      --c-paper:  #FFFFFF;
+      --c-mist:   #F3F6FB;
+      --c-tint:   #DBE6F7;
+      --c-navy:   #0A2540;
+      --c-azure:  #2456E6;
+      --c-ink:    #050816;
+      --c-ink-2:  #2C3444;
+      --c-mute:   #6B7588;
+      --c-rule:   rgba(5, 8, 22, 0.10);
+    }
+
+    /* ── Base ── */
+    html { scroll-behavior: smooth; }
+    body { font: 400 15px/1.6 'Geist', sans-serif; color: var(--c-ink); background: var(--c-paper); -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Instrument Serif', serif; font-weight: 400; letter-spacing: -0.015em; text-wrap: balance; }
+    p { color: var(--c-ink-2); text-wrap: pretty; }
+    a { color: inherit; text-decoration: none; }
+    em { color: var(--c-azure); font-style: italic; }
+    button { font-family: inherit; }
+
+    /* ── Anchor offset for fixed nav ── */
+    #como-funciona, #contato { scroll-margin-top: 80px; }
+
+    /* ── Layout ── */
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 64px; }
+    @media (max-width: 768px) { .wrap { padding: 0 24px; } }
+
+    /* ── Eyebrow ── */
+    .eyebrow {
+      display: block;
+      font: 500 11px/1.4 'Geist Mono', monospace;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--c-mute);
+    }
+
+    /* ── Buttons ── */
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--c-ink); color: var(--c-paper);
+      padding: 14px 24px; border-radius: 999px;
+      font: 500 14px/1 'Geist', sans-serif; letter-spacing: 0.01em;
+      border: none; cursor: pointer; transition: background 0.15s;
+    }
+    .btn-primary:hover { background: var(--c-navy); }
+    .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: transparent; color: var(--c-ink);
+      padding: 13px 23px; border-radius: 999px;
+      border: 1px solid var(--c-ink);
+      font: 500 14px/1 'Geist', sans-serif; letter-spacing: 0.01em;
+      cursor: pointer; transition: border-color 0.15s, color 0.15s;
+    }
+    .btn-secondary:hover { border-color: var(--c-navy); color: var(--c-navy); }
+
+    /* ── Nav ── */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--c-paper); border-bottom: 1px solid var(--c-rule);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 64px;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
+    }
+    @media (max-width: 768px) { .nav-inner { padding: 0 24px; } }
+    .nav-logo { display: inline-flex; align-items: center; gap: 14px; color: var(--c-ink); }
+    .nav-wordmark { font: 500 13px/1 'Geist', sans-serif; letter-spacing: 0.22em; text-transform: uppercase; }
+
+    /* ── Hero ── */
+    .hero { padding: 160px 0 120px; background: var(--c-paper); }
+    .hero-inner { max-width: 760px; }
+    .hero .eyebrow { margin-bottom: 32px; }
+    .hero h1 { font-size: clamp(2.75rem, 6.5vw, 5.5rem); line-height: 0.95; margin-bottom: 32px; }
+    .hero-lead { font-size: 18px; line-height: 1.55; max-width: 520px; margin-bottom: 48px; }
+    .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+
+    /* ── Section header ── */
+    .section-header { margin-bottom: 64px; }
+    .section-header .eyebrow { margin-bottom: 20px; }
+    .section-header h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.0; }
+    .section-header p { font-size: 18px; line-height: 1.55; max-width: 520px; margin-top: 16px; }
+
+    /* ── How it works (Mist) ── */
+    .how { background: var(--c-mist); padding: 120px 0; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--c-rule); }
+    .step { padding: 40px 32px; border-right: 1px solid var(--c-rule); }
+    .step:last-child { border-right: 0; }
+    .step .eyebrow { margin-bottom: 24px; }
+    .step h3 { font-size: 2rem; line-height: 1.05; margin-bottom: 16px; }
+    .step p { font-size: 15px; line-height: 1.6; }
+    @media (max-width: 768px) {
+      .steps { grid-template-columns: 1fr; }
+      .step { border-right: 0; border-bottom: 1px solid var(--c-rule); }
+      .step:last-child { border-bottom: 0; }
+    }
+
+    /* ── Benefits (Navy) ── */
+    .benefits { background: var(--c-navy); padding: 120px 0; }
+    .benefits .eyebrow { color: rgba(255,255,255,0.35); }
+    .benefits h2 { color: var(--c-paper); font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.0; }
+    .benefits h2 em { color: var(--c-tint); }
+    .benefits .section-header p { color: rgba(255,255,255,0.55); margin-top: 16px; font-size: 18px; line-height: 1.55; max-width: 480px; }
+    .benefit-cards { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid rgba(255,255,255,0.12); }
+    .benefit-card { padding: 40px 32px; border-right: 1px solid rgba(255,255,255,0.12); }
+    .benefit-card:last-child { border-right: 0; }
+    .benefit-card .eyebrow { color: rgba(255,255,255,0.3); margin-bottom: 24px; }
+    .benefit-card h3 { font-size: 1.75rem; line-height: 1.1; color: var(--c-paper); margin-bottom: 16px; }
+    .benefit-card p { color: rgba(255,255,255,0.55); font-size: 15px; line-height: 1.6; }
+    @media (max-width: 768px) {
+      .benefit-cards { grid-template-columns: 1fr; }
+      .benefit-card { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.12); }
+      .benefit-card:last-child { border-bottom: 0; }
+    }
+
+    /* ── Form (Paper) ── */
+    .form-section { background: var(--c-paper); padding: 120px 0; }
+    .form-wrap { max-width: 640px; margin: 0 auto; }
+    .form-header { margin-bottom: 64px; }
+    .form-header .eyebrow { margin-bottom: 20px; }
+    .form-header h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.05; }
+    .form-header p { font-size: 18px; line-height: 1.55; margin-top: 16px; }
+
+    .field { margin-bottom: 40px; }
+    .field .eyebrow { margin-bottom: 10px; }
+    .field input, .field textarea, .field select {
+      width: 100%; background: transparent; border: 0;
+      border-bottom: 1px solid var(--c-rule); padding: 10px 0 14px;
+      font: 400 22px/1 'Instrument Serif', serif; color: var(--c-ink);
+      outline: none; appearance: none; -webkit-appearance: none;
+    }
+    .field input::placeholder, .field textarea::placeholder { color: var(--c-mute); }
+    .field select {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236B7588'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 0 center; background-size: 18px; padding-right: 28px;
+    }
+    .field select option { font-family: 'Geist', sans-serif; font-size: 16px; color: var(--c-ink); background: var(--c-paper); }
+    .field input:focus, .field textarea:focus, .field select:focus { border-bottom-color: var(--c-azure); }
+    .field textarea { resize: none; font-size: 18px; line-height: 1.5; }
+
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0 40px; }
+    @media (max-width: 640px) { .field-row { grid-template-columns: 1fr; } }
+
+    .char-hint { font: 400 11px/1 'Geist Mono', monospace; letter-spacing: 0.05em; color: var(--c-mute); text-align: right; margin-top: 8px; }
+
+    .form-error {
+      display: none; font: 400 13px/1.5 'Geist', sans-serif; color: #b91c1c;
+      padding: 12px 16px; border-left: 2px solid #b91c1c; margin-bottom: 24px;
+    }
+    .form-error.visible { display: block; }
+
+    .form-submit { margin-top: 48px; }
+    .form-note { font: 400 11px/1.5 'Geist Mono', monospace; letter-spacing: 0.06em; text-transform: uppercase; color: var(--c-mute); margin-top: 16px; }
+
+    .success-msg { display: none; padding: 80px 0; }
+    .success-msg h3 { font-size: 2.5rem; line-height: 1.1; margin-bottom: 16px; }
+    .success-msg p { font-size: 18px; }
+    .success-msg.visible { display: block; }
+
+    /* ── Footer (Ink) ── */
+    footer { background: var(--c-ink); padding: 40px 0; }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto; padding: 0 64px;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+    }
+    @media (max-width: 768px) { .footer-inner { padding: 0 24px; } }
+    .footer-logo { display: inline-flex; align-items: center; gap: 12px; color: var(--c-paper); }
+    .footer-copy { font: 400 11px/1 'Geist Mono', monospace; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.25); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="Voltra">
+        <svg viewBox="0 0 48 64" width="18" height="24" aria-hidden="true">
+          <polygon points="38,4 8,32 22,32 14,60 44,32 30,32" fill="currentColor"/>
+        </svg>
+        <span class="nav-wordmark">Voltra</span>
+      </a>
       <a
         href="#contato"
+        class="btn-primary"
         onclick="gtag('event', 'button_click', {button_name: 'nav_cta', location: 'navbar'})"
-        class="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors"
-      >
-        Demonstre interesse &rarr;
-      </a>
+      >Demonstre interesse</a>
     </div>
-  </header>
+  </nav>
 
   <!-- HERO -->
-  <section class="min-h-screen flex items-center pt-20">
-    <div class="max-w-6xl mx-auto px-6 py-24 text-center">
-      <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1.5 text-sm text-blue-400 mb-8">
-        <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
-        Chegando em Natal, RN
-      </div>
-
-      <h1 class="text-5xl md:text-7xl font-black leading-tight tracking-tighter mb-6">
-        Recarga elétrica<br />
-        <span class="text-blue-400">onde você precisa.</span>
-      </h1>
-
-      <p class="text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-        Voltra instala e opera pontos de recarga para veículos elétricos em condomínios
-        residenciais. Sem obras complexas. Sem custo para o condomínio. Sem burocracia.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href="#contato"
-          onclick="gtag('event', 'button_click', {button_name: 'hero_primary_cta', location: 'hero'})"
-          class="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/20"
-        >
-          Quero saber mais
-        </a>
-        <a
-          href="#como-funciona"
-          class="border border-zinc-700 hover:border-zinc-500 text-zinc-300 hover:text-white font-semibold px-8 py-4 rounded-lg transition-all duration-200"
-        >
-          Como funciona
-        </a>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-inner">
+        <span class="eyebrow">Recarga elétrica para condomínios — Natal, RN</span>
+        <h1>
+          O morador quer carregar.<br />
+          O condomínio <em>não paga nada.</em>
+        </h1>
+        <p class="hero-lead">
+          A Voltra instala e opera totens de recarga para veículos elétricos em condomínios residenciais. Sem obras complexas. Sem custo para o condomínio — o morador paga pela energia consumida.
+        </p>
+        <div class="hero-ctas">
+          <a
+            href="#contato"
+            class="btn-primary"
+            onclick="gtag('event', 'button_click', {button_name: 'hero_primary_cta', location: 'hero'})"
+          >Quero saber mais</a>
+          <a href="#como-funciona" class="btn-secondary">Como funciona</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- HOW IT WORKS -->
-  <section id="como-funciona" class="py-24 border-t border-zinc-800/60">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-black tracking-tight mb-4">
-          Os moradores já têm carro elétrico.<br />
-          <span class="text-blue-400">E agora?</span>
-        </h2>
-        <p class="text-zinc-400 text-lg max-w-xl mx-auto">
-          Cada vez mais moradores chegam com veículos elétricos e sem onde carregar.
-          A Voltra resolve isso para o seu condomínio — sem que você precise se preocupar com nada.
-        </p>
+  <section class="how" id="como-funciona">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">§ 01 — Como funciona</span>
+        <h2>Três etapas.<br /><em>Nenhuma delas é sua.</em></h2>
+        <p>A Voltra cuida de tudo — da avaliação técnica ao suporte ao morador. O síndico só precisa dizer sim.</p>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-blue-500/30 transition-colors">
-          <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
-            <span class="text-xl font-black text-blue-400">01</span>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Nós instalamos</h3>
-          <p class="text-zinc-400 leading-relaxed">
-            Cuidamos de toda a infraestrutura — da avaliação técnica à instalação dos
-            carregadores na garagem. Sem custo inicial para o condomínio.
-          </p>
+      <div class="steps">
+        <div class="step">
+          <span class="eyebrow">01 — Instalação</span>
+          <h3>Nós instalamos</h3>
+          <p>Avaliação técnica da garagem, projeto elétrico, instalação dos totens — sem custo inicial para o condomínio.</p>
         </div>
-
-        <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-blue-500/30 transition-colors">
-          <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
-            <span class="text-xl font-black text-blue-400">02</span>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Você oferece</h3>
-          <p class="text-zinc-400 leading-relaxed">
-            Os moradores acessam os carregadores na própria garagem via aplicativo ou cartão.
-            Sem filas, sem deslocamento, sem complicação.
-          </p>
+        <div class="step">
+          <span class="eyebrow">02 — Operação</span>
+          <h3>Você oferece</h3>
+          <p>Os moradores acessam os totens na própria garagem via aplicativo ou cartão. Sem filas, sem deslocamento.</p>
         </div>
-
-        <div class="bg-zinc-900 rounded-2xl p-8 border border-zinc-800 hover:border-blue-500/30 transition-colors">
-          <div class="w-12 h-12 bg-blue-500/10 rounded-xl flex items-center justify-center mb-6">
-            <span class="text-xl font-black text-blue-400">03</span>
-          </div>
-          <h3 class="text-xl font-bold mb-3">Cobramos pelo uso</h3>
-          <p class="text-zinc-400 leading-relaxed">
-            O usuário paga apenas pela energia consumida. Sem mensalidade, sem surpresas.
-            Gestão 100% pela Voltra.
-          </p>
+        <div class="step">
+          <span class="eyebrow">03 — Cobrança</span>
+          <h3>O morador paga</h3>
+          <p>Cada morador paga apenas pela energia consumida. Gestão, manutenção e suporte — tudo pela Voltra.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BENEFITS FOR SÍNDICOS -->
-  <section class="py-24 bg-zinc-900/20">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-black tracking-tight mb-4">Por que levar a Voltra<br /><span class="text-blue-400">ao seu condomínio?</span></h2>
-        <p class="text-zinc-400 text-lg max-w-xl mx-auto">Para síndicos e administradoras que querem oferecer mais sem se preocupar com mais.</p>
+  <!-- BENEFITS -->
+  <section class="benefits">
+    <div class="wrap">
+      <div class="section-header">
+        <span class="eyebrow">§ 02 — Por que a Voltra</span>
+        <h2>Para síndicos que querem<br /><em>oferecer mais.</em></h2>
+        <p>Sem investimento, sem obras, sem gestão. O condomínio ganha — o síndico não perde tempo.</p>
       </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="rounded-2xl p-8 border border-zinc-800 bg-zinc-900/60">
-          <div class="w-10 h-10 text-blue-400 mb-5">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold mb-2">Zero custo para o condomínio</h3>
-          <p class="text-zinc-400 text-sm leading-relaxed">
-            A Voltra arca com toda a instalação. O condomínio não desembolsa nada —
-            quem paga é o morador que usa a recarga.
-          </p>
+      <div class="benefit-cards">
+        <div class="benefit-card">
+          <span class="eyebrow">01 — Custo</span>
+          <h3>Zero custo para o condomínio</h3>
+          <p>A Voltra arca com toda a instalação. O condomínio não desembolsa nada — quem paga é o morador que usa o totem.</p>
         </div>
-
-        <div class="rounded-2xl p-8 border border-zinc-800 bg-zinc-900/60">
-          <div class="w-10 h-10 text-blue-400 mb-5">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold mb-2">Sem obra, sem dor de cabeça</h3>
-          <p class="text-zinc-400 text-sm leading-relaxed">
-            Instalação discreta na garagem, sem reforma estrutural.
-            A Voltra cuida de tudo: projeto, aprovação, instalação e manutenção.
-          </p>
+        <div class="benefit-card">
+          <span class="eyebrow">02 — Operação</span>
+          <h3>Sem obra, sem burocracia</h3>
+          <p>Instalação discreta na garagem, sem reforma estrutural. A Voltra cuida de projeto, aprovação, instalação e manutenção.</p>
         </div>
-
-        <div class="rounded-2xl p-8 border border-zinc-800 bg-zinc-900/60">
-          <div class="w-10 h-10 text-blue-400 mb-5">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-bold mb-2">Valoriza o imóvel</h3>
-          <p class="text-zinc-400 text-sm leading-relaxed">
-            Condomínios com recarga elétrica se destacam no mercado imobiliário e
-            atendem uma demanda crescente de moradores e compradores.
-          </p>
+        <div class="benefit-card">
+          <span class="eyebrow">03 — Valor</span>
+          <h3>Valoriza o imóvel</h3>
+          <p>Condomínios com recarga elétrica se destacam no mercado imobiliário e atendem uma demanda crescente de moradores.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- FORM -->
-  <section id="contato" class="py-24">
-    <div class="max-w-2xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl font-black tracking-tight mb-4">
-          Quer a Voltra no seu condomínio?
-        </h2>
-        <p class="text-zinc-400 text-lg">
-          Deixe seu contato. Nossa equipe entra em breve para entender as necessidades do seu condomínio.
-        </p>
-      </div>
+  <section class="form-section" id="contato">
+    <div class="wrap">
+      <div class="form-wrap">
+        <div class="form-header">
+          <span class="eyebrow">§ 03 — Contato</span>
+          <h2>Quer a Voltra no seu condomínio?</h2>
+          <p>Deixe seu contato. Nossa equipe entra em breve para entender as necessidades do seu condomínio.</p>
+        </div>
 
-      <form id="lead-form" novalidate>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-          <div>
-            <label for="nome" class="block text-sm font-medium text-zinc-300 mb-1.5">Nome *</label>
-            <input
-              type="text" id="nome" name="nome" required
-              placeholder="Nome do síndico ou responsável"
-              class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-            />
+        <form id="lead-form" novalidate>
+          <div class="field-row">
+            <div class="field">
+              <label for="nome" class="eyebrow">Nome *</label>
+              <input type="text" id="nome" name="nome" required placeholder="Síndico ou responsável" />
+            </div>
+            <div class="field">
+              <label for="telefone" class="eyebrow">Telefone *</label>
+              <input
+                type="tel" id="telefone" name="telefone" required
+                placeholder="(84) 99999-9999"
+                maxlength="15"
+                oninput="maskPhone(this)"
+              />
+            </div>
           </div>
-          <div>
-            <label for="telefone" class="block text-sm font-medium text-zinc-300 mb-1.5">Telefone *</label>
-            <input
-              type="tel" id="telefone" name="telefone" required
-              placeholder="(84) 99999-9999"
-              maxlength="15"
-              oninput="maskPhone(this)"
-              class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-            />
+
+          <div class="field">
+            <label for="email" class="eyebrow">E-mail *</label>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com" />
           </div>
+
+          <div class="field">
+            <label for="tipo" class="eyebrow">Tipo de condomínio</label>
+            <select id="tipo" name="tipo">
+              <option value="">Selecione...</option>
+              <option value="residencial_vertical">Residencial vertical (apartamentos)</option>
+              <option value="residencial_horizontal">Residencial horizontal (casas)</option>
+              <option value="comercial">Comercial / Empresarial</option>
+              <option value="misto">Misto (residencial + comercial)</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="mensagem" class="eyebrow">Mensagem (opcional)</label>
+            <textarea
+              id="mensagem" name="mensagem" rows="4" maxlength="250"
+              oninput="updateCount(this)"
+              placeholder="Conte um pouco sobre seu condomínio..."
+            ></textarea>
+            <p class="char-hint"><span id="char-count">0</span> / 250</p>
+          </div>
+
+          <div id="form-error" class="form-error"></div>
+
+          <div class="form-submit">
+            <button type="submit" id="submit-btn" class="btn-primary">Quero saber mais</button>
+            <p class="form-note">Seus dados são usados apenas para entrar em contato.</p>
+          </div>
+        </form>
+
+        <div id="success-msg" class="success-msg">
+          <h3>Recebemos seu contato.</h3>
+          <p>Em breve nossa equipe entrará em contato com você.</p>
         </div>
-
-        <div class="mb-4">
-          <label for="email" class="block text-sm font-medium text-zinc-300 mb-1.5">E-mail *</label>
-          <input
-            type="email" id="email" name="email" required
-            placeholder="seu@email.com"
-            class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-          />
-        </div>
-
-        <div class="mb-4">
-          <label for="tipo" class="block text-sm font-medium text-zinc-300 mb-1.5">Tipo de condomínio</label>
-          <select
-            id="tipo" name="tipo"
-            class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
-            style="appearance:none; background-image:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2371717a'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E\"); background-repeat:no-repeat; background-position:right 1rem center; background-size:1.2rem;"
-          >
-            <option value="">Selecione...</option>
-            <option value="residencial_vertical">Residencial vertical (apartamentos)</option>
-            <option value="residencial_horizontal">Residencial horizontal (casas)</option>
-            <option value="comercial">Comercial / Empresarial</option>
-            <option value="misto">Misto (residencial + comercial)</option>
-            <option value="outro">Outro</option>
-          </select>
-        </div>
-
-        <div class="mb-6">
-          <label for="mensagem" class="block text-sm font-medium text-zinc-300 mb-1.5">
-            Mensagem <span class="text-zinc-500 font-normal">(opcional)</span>
-          </label>
-          <textarea
-            id="mensagem" name="mensagem" rows="4" maxlength="250"
-            oninput="updateCount(this)"
-            placeholder="Conte um pouco sobre seu condomínio e quantas vagas têm..."
-            class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none"
-          ></textarea>
-          <p class="text-xs text-zinc-500 mt-1 text-right"><span id="char-count">0</span>/250</p>
-        </div>
-
-        <div id="form-error" class="hidden mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm"></div>
-
-        <button
-          type="submit" id="submit-btn"
-          class="w-full bg-blue-600 hover:bg-blue-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold py-4 rounded-lg transition-all duration-200 hover:shadow-xl hover:shadow-blue-500/20"
-        >
-          Quero saber mais &rarr;
-        </button>
-
-        <p class="text-xs text-zinc-500 text-center mt-3">
-          Seus dados são usados apenas para entrar em contato. Sem spam.
-        </p>
-      </form>
-
-      <div id="success-msg" class="hidden text-center py-12">
-        <div class="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-          </svg>
-        </div>
-        <h3 class="text-2xl font-bold mb-2">Recebemos seu contato!</h3>
-        <p class="text-zinc-400">Em breve nossa equipe entrará em contato com você.</p>
       </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="border-t border-zinc-800 py-8">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-sm text-zinc-500">
-      <span><span class="text-blue-400 font-bold">Voltra</span> &middot; Natal, RN &middot; Brasil</span>
-      <span>&copy; 2025 Voltra. Todos os direitos reservados.</span>
+  <footer>
+    <div class="footer-inner">
+      <a href="/" class="footer-logo" aria-label="Voltra">
+        <svg viewBox="0 0 48 64" width="16" height="21" aria-hidden="true">
+          <polygon points="38,4 8,32 22,32 14,60 44,32 30,32" fill="currentColor"/>
+        </svg>
+        <span class="nav-wordmark">Voltra</span>
+      </a>
+      <span class="footer-copy">&copy; 2025 Voltra &mdash; Natal, RN, Brasil</span>
     </div>
   </footer>
 
@@ -357,21 +432,20 @@
 
     function showError(msg) {
       errBox.textContent = msg;
-      errBox.classList.remove('hidden');
+      errBox.classList.add('visible');
     }
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      errBox.classList.add('hidden');
+      errBox.classList.remove('visible');
 
       var nome     = document.getElementById('nome').value.trim();
       var telefone = document.getElementById('telefone').value.replace(/\D/g, '');
       var email    = document.getElementById('email').value.trim();
-      var mensagem = document.getElementById('mensagem').value.trim();
 
-      if (!nome)                          return showError('Informe seu nome.');
-      if (telefone.length < 10)           return showError('Telefone inválido. Informe DDD + número.');
-      if (!isValidEmail(email))           return showError('E-mail inválido.');
+      if (!nome)                return showError('Informe seu nome.');
+      if (telefone.length < 10) return showError('Telefone inválido. Informe DDD + número.');
+      if (!isValidEmail(email)) return showError('E-mail inválido.');
 
       btn.disabled    = true;
       btn.textContent = 'Enviando...';
@@ -384,13 +458,13 @@
         body   : new FormData(form),
       })
         .then(function () {
-          form.classList.add('hidden');
-          success.classList.remove('hidden');
+          form.style.display = 'none';
+          success.classList.add('visible');
           gtag('event', 'generate_lead', { form_name: 'lead_form' });
         })
         .catch(function () {
           btn.disabled    = false;
-          btn.textContent = 'Quero saber mais →';
+          btn.textContent = 'Quero saber mais';
           showError('Erro ao enviar. Tente novamente em instantes.');
         });
     });
