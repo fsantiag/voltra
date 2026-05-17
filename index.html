@@ -285,14 +285,15 @@
 
         <div class="mb-6">
           <label for="mensagem" class="block text-sm font-medium text-zinc-300 mb-1.5">
-            Mensagem *
+            Mensagem <span class="text-zinc-500 font-normal">(opcional)</span>
           </label>
           <textarea
-            id="mensagem" name="mensagem" rows="4" required minlength="10"
+            id="mensagem" name="mensagem" rows="4" maxlength="250"
+            oninput="updateCount(this)"
             placeholder="Conte um pouco sobre seu condomínio e quantas vagas têm..."
             class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none"
           ></textarea>
-          <p id="mensagem-hint" class="text-xs text-zinc-500 mt-1">Mínimo 10 caracteres.</p>
+          <p class="text-xs text-zinc-500 mt-1 text-right"><span id="char-count">0</span>/250</p>
         </div>
 
         <div id="form-error" class="hidden mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm"></div>
@@ -346,6 +347,10 @@
       else                      input.value = '(' + d.slice(0,2) + ') ' + d.slice(2,7) + '-' + d.slice(7);
     }
 
+    function updateCount(textarea) {
+      document.getElementById('char-count').textContent = textarea.value.length;
+    }
+
     function isValidEmail(v) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
     }
@@ -367,7 +372,6 @@
       if (!nome)                          return showError('Informe seu nome.');
       if (telefone.length < 10)           return showError('Telefone inválido. Informe DDD + número.');
       if (!isValidEmail(email))           return showError('E-mail inválido.');
-      if (mensagem.length < 10)           return showError('Mensagem muito curta. Mínimo 10 caracteres.');
 
       btn.disabled    = true;
       btn.textContent = 'Enviando...';
