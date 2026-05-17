@@ -251,6 +251,8 @@
             <input
               type="tel" id="telefone" name="telefone" required
               placeholder="(84) 99999-9999"
+              maxlength="15"
+              oninput="maskPhone(this)"
               class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
             />
           </div>
@@ -283,13 +285,14 @@
 
         <div class="mb-6">
           <label for="mensagem" class="block text-sm font-medium text-zinc-300 mb-1.5">
-            Mensagem <span class="text-zinc-500 font-normal">(opcional)</span>
+            Mensagem *
           </label>
           <textarea
-            id="mensagem" name="mensagem" rows="4"
-            placeholder="Conte um pouco sobre seu espaço..."
+            id="mensagem" name="mensagem" rows="4" required minlength="10"
+            placeholder="Conte um pouco sobre seu condomínio e quantas vagas têm..."
             class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors resize-none"
           ></textarea>
+          <p id="mensagem-hint" class="text-xs text-zinc-500 mt-1">Mínimo 10 caracteres.</p>
         </div>
 
         <div id="form-error" class="hidden mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm"></div>
@@ -327,8 +330,6 @@
   </footer>
 
   <script>
-    // Replace with your deployed Google Apps Script Web App URL
-    // See apps-script.gs for setup instructions
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxsC87Fn93UKAxtRFBnGF5ymP05NN1l07RYbh0K8YU4CRZeglPt7rwcrZdnih5KmedCkQ/exec';
 
     const form    = document.getElementById('lead-form');
@@ -336,21 +337,43 @@
     const errBox  = document.getElementById('form-error');
     const success = document.getElementById('success-msg');
 
+    function maskPhone(input) {
+      var d = input.value.replace(/\D/g, '').substring(0, 11);
+      if      (d.length === 0)  input.value = '';
+      else if (d.length <= 2)   input.value = '(' + d;
+      else if (d.length <= 6)   input.value = '(' + d.slice(0,2) + ') ' + d.slice(2);
+      else if (d.length <= 10)  input.value = '(' + d.slice(0,2) + ') ' + d.slice(2,6) + '-' + d.slice(6);
+      else                      input.value = '(' + d.slice(0,2) + ') ' + d.slice(2,7) + '-' + d.slice(7);
+    }
+
+    function isValidEmail(v) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
+    }
+
+    function showError(msg) {
+      errBox.textContent = msg;
+      errBox.classList.remove('hidden');
+    }
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       errBox.classList.add('hidden');
 
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
+      var nome     = document.getElementById('nome').value.trim();
+      var telefone = document.getElementById('telefone').value.replace(/\D/g, '');
+      var email    = document.getElementById('email').value.trim();
+      var mensagem = document.getElementById('mensagem').value.trim();
+
+      if (!nome)                          return showError('Informe seu nome.');
+      if (telefone.length < 10)           return showError('Telefone inválido. Informe DDD + número.');
+      if (!isValidEmail(email))           return showError('E-mail inválido.');
+      if (mensagem.length < 10)           return showError('Mensagem muito curta. Mínimo 10 caracteres.');
 
       btn.disabled    = true;
       btn.textContent = 'Enviando...';
 
       gtag('event', 'form_submit', { form_name: 'lead_form', method: 'web' });
 
-      // mode: no-cors — browser blocks reading the response but the POST reaches Apps Script
       fetch(SCRIPT_URL, {
         method : 'POST',
         mode   : 'no-cors',
@@ -364,8 +387,7 @@
         .catch(function () {
           btn.disabled    = false;
           btn.textContent = 'Quero saber mais →';
-          errBox.textContent = 'Erro ao enviar. Tente novamente em instantes.';
-          errBox.classList.remove('hidden');
+          showError('Erro ao enviar. Tente novamente em instantes.');
         });
     });
   </script>
